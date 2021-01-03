@@ -1,7 +1,7 @@
 <?php
 
 
-namespace axunl\http\client;
+namespace http\client;
 
 
 class HttpClientException extends \Exception

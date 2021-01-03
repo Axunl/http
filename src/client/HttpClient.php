@@ -1,6 +1,6 @@
 <?php
 
-namespace axunl\http\client;
+namespace http\client;
 
 /**
  * Class HttpClient

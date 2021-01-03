@@ -1,6 +1,6 @@
 <?php
 
-namespace axunl\http\client\implement;
+namespace http\client\implement;
 
 use axunl\http\client\HttpClient;
 use axunl\http\client\Response;
