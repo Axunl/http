@@ -1,6 +1,6 @@
 {
-    "name": "axunl/http",
-    "description": "http",
+    "name": "axunl/httpClient",
+    "description": "httpClient",
     "license": "MIT",
     "authors": [
         {
