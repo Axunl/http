@@ -1,9 +1,9 @@
 <?php
 
-namespace http\client\implement;
+namespace HttpClient\implement;
 
-use axunl\http\client\HttpClient;
-use axunl\http\client\Response;
+use HttpClient\HttpClient;
+use HttpClient\Response;
 
 /**
  * 基于curl的httpClient实现

@@ -1,6 +1,6 @@
 <?php
 
-namespace http\client;
+namespace HttpClient;
 
 /**
  * Class HttpClient
@@ -337,7 +337,8 @@ abstract class HttpClient
         while ($failReplyNum <= $this->getFailReplyNum()) {
             $response = $this->_request();
             $failReplyNum++;
-            if ($response->code === 200) {
+            //2xx
+            if (mb_strpos($response->code,'2')) {
                 $this->params = [];
                 return json_decode($response->data, false) ?: $response->data;
                 break;
