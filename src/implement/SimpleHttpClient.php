@@ -8,7 +8,7 @@ use HttpClient\Response;
 /**
  * 基于curl的httpClient实现
  * Class SimpleHttpClient
- * @package axunl\http\implement
+ * @package HttpClient\implement
  */
 class SimpleHttpClient extends HttpClient
 {

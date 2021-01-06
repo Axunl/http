@@ -3,7 +3,10 @@
 
 namespace HttpClient;
 
-
+/**
+ * Class Response
+ * @package HttpClient
+ */
 class Response
 {
     /**

@@ -4,7 +4,7 @@ namespace HttpClient;
 
 /**
  * Class HttpClient
- * @package axunl\http
+ * @package HttpClient
  */
 abstract class HttpClient
 {
