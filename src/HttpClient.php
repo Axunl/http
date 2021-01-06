@@ -338,7 +338,7 @@ abstract class HttpClient
             $response = $this->_request();
             $failReplyNum++;
             //2xx
-            if (mb_strpos($response->code,'2')) {
+            if (mb_strpos($response->code, '2') !== false) {
                 $this->params = [];
                 return json_decode($response->data, false) ?: $response->data;
                 break;
