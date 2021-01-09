@@ -81,6 +81,12 @@ abstract class HttpClient
     protected $handle;
 
     /**
+     * autoObject
+     * @var bool
+     */
+    protected $autoObject = true;
+
+    /**
      * HttpClient constructor.
      */
     private function __construct()
@@ -217,6 +223,24 @@ abstract class HttpClient
     }
 
     /**
+     * @return bool
+     */
+    public function isAutoObject()
+    {
+        return $this->autoObject;
+    }
+
+    /**
+     * @param bool $autoObject
+     * @return HttpClient
+     */
+    public function setAutoObject($autoObject)
+    {
+        $this->autoObject = $autoObject;
+        return $this;
+    }
+
+    /**
      * isHttp
      * @return bool
      */
@@ -337,10 +361,15 @@ abstract class HttpClient
         while ($failReplyNum <= $this->getFailReplyNum()) {
             $response = $this->_request();
             $failReplyNum++;
-            //2xx
-            if (mb_strpos($response->code, '2') !== false) {
+            //1xx 2xx success
+            if ((int)$response->code[0] === 1 || (int)$response->code[0] === 2) {
                 $this->params = [];
-                return json_decode($response->data, false) ?: $response->data;
+                // 自动转换object
+                if ($this->autoObject) {
+                    return json_decode($response->data, false) ?: $response->data;
+                } else {
+                    return $response->data;
+                }
                 break;
             }
         }
