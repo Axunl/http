@@ -245,7 +245,7 @@ abstract class HttpClient
         foreach ($params as $k => $v) {
             $_params[] = $k . '=' . $v;
         }
-        $url .= '?' . implode('&', $_params);
+        $url .= $_params ? '?' . implode('&', $_params) : '';
         $this->method = self::GET;
         return $this->request($url, $_params, $headers);
     }
