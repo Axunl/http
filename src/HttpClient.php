@@ -373,8 +373,9 @@ abstract class HttpClient
                 break;
             }
         }
-        // 错误处理
         $this->params = [];
+        $this->headers = [];
+        // 错误处理
         if (isset($response) && $this->handle) {
             ($this->handle)($response);
         } else {
