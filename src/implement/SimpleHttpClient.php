@@ -83,7 +83,6 @@ class SimpleHttpClient extends HttpClient
         foreach ($this->getHeaders() as $k => $v) {
             $_header[] = $k . ':' . $v;
         }
-        $_header[] = 'Content-type:application/x-www-form-urlencoded';
         $this->setOptions([CURLOPT_HTTPHEADER, $_header]);
         return $this;
     }

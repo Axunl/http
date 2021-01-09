@@ -14,6 +14,7 @@ $headers = [
 $res = $client->get($url, $params, $headers);
 ```
 
+- 内置SimpleHttpClient(需安装curl扩展)与GuzzleHttpClient(需引入GuzzleHttp包)
 - 支持GET、POST、PUT、DELETE、PATCH、JSON请求
 
 ## 自定义exception-handle
@@ -41,4 +42,5 @@ class MyHttpClient extends \axunl\http\client\HttpClient
     }
 }
 ```
-- 只需要实现request方法并返回一个Response的对象即可扩展httpClient类
+- 需要实现_request方法并返回一个Response的对象(具体参照SimpleHttpClient类)即可扩展httpClient类
+

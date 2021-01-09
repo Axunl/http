@@ -246,7 +246,7 @@ abstract class HttpClient
      */
     public function isssl()
     {
-        return substr($this->url, 0, 8) === "https://";
+        return mb_strpos($this->url, "https://") === 0;
     }
 
     /**
@@ -362,7 +362,7 @@ abstract class HttpClient
             $response = $this->_request();
             $failReplyNum++;
             //1xx 2xx success
-            if ((int)$response->code[0] === 1 || (int)$response->code[0] === 2) {
+            if (mb_strpos($response->code, '2') === 0 || mb_strpos($response->code, '1') === 0) {
                 $this->params = [];
                 // 自动转换object
                 if ($this->autoObject) {
@@ -399,6 +399,17 @@ abstract class HttpClient
         } catch (\Exception $exception) {
             throw new  HttpClientException('must instanceof ' . __CLASS__);
         }
+    }
+
+    /**
+     * bearer Authorization
+     * @param $token
+     * @return $this
+     */
+    public function bearer($token)
+    {
+        $this->setHeaders(['Authorization', 'Bearer ' . $token]);
+        return $this;
     }
 
     /**
