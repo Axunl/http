@@ -409,7 +409,7 @@ abstract class HttpClient
      */
     public function bearer($token)
     {
-        $this->setHeaders(['Authorization', 'Bearer ' . $token]);
+        $this->setHeaders(['Authorization' => 'Bearer ' . $token]);
         return $this;
     }
 
