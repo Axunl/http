@@ -102,7 +102,8 @@ class GuzzleHttpClient extends HttpClient
                 function (RequestException $response) {
                     return new Response($this->url, $response->getRequest()->getHeaders(), $response->getCode(), $response->getRequest()->getBody()->getContents());
                 }
-            );
+            )
+            ->wait();
     }
 
     /**
