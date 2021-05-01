@@ -1,46 +1,41 @@
-# httpClient
-## 概述
-php模拟http请求的客户端
-## 快速开始
+# HttpClient
+
+> 极易上手的Http客户端
+
+## 示例
+
 ```php
-$client = \axunl\http\client\HttpClient::factory(\axunl\http\client\implement\SimpleHttpClient::class);
-$url = '';
+// 1、设置请求的url链接
+$url = 'https://www.baidu.com';
+// 2、设置请求参数
 $params = [
-    'foo' => 'bar'
+    'foo' => 'foo',
+    'bar' => 'bar'
 ];
-$headers = [
-    'header' => ''
-];
-$res = $client->get($url, $params, $headers);
+// 3、从容器中取出Http客户端
+$client = (new \axunl\httpClient\Container())->simple;
+// 4、发送请求
+$data = $client->get($url);
 ```
 
-- 内置SimpleHttpClient(需安装curl扩展)与GuzzleHttpClient(需引入GuzzleHttp包)
-- 支持GET、POST、PUT、DELETE、PATCH、JSON请求
+## 支持请求的方式
 
-## 自定义exception-handle
+- get
+- post
+- put
+- patch
+- delete
+- json
+
+## 为请求设置异常处理
+
 ```php
-$client = \axunl\http\client\HttpClient::factory(\axunl\http\client\implement\SimpleHttpClient::class);
-$client->setHandle(function ($response) {
-# todo
+$client = (new \axunl\httpClient\Container())->simple;
+$client->setHandle(function (\axunl\httpClient\Response $response) {
+// write your code
 });
 ```
-- 像这样的，在http请求时出现异常会走到自定义异常的处理中而并不是直接抛出一个异常
 
-## 自定义httpClient类
+## 致谢
 
-``` php
-
-class MyHttpClient extends \axunl\http\client\HttpClient
-{
-
-    /**
-     * @inheritDoc
-     */
-    protected function _request()
-    {
-        // TODO: Implement _request() method.
-    }
-}
-```
-- 需要实现_request方法并返回一个Response的对象(具体参照SimpleHttpClient类)即可扩展httpClient类
-
+如果觉得好用，可以fork或者star本仓库
