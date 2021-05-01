@@ -1,10 +1,12 @@
 <?php
 
-namespace HttpClient;
+namespace axunl\httpClient;
+
+use axunl\httpClient\exception\HttpClientException;
 
 /**
  * Class HttpClient
- * @package HttpClient
+ * @package axunl\httpClient
  */
 abstract class HttpClient
 {
@@ -89,7 +91,7 @@ abstract class HttpClient
     /**
      * HttpClient constructor.
      */
-    private function __construct()
+    public function __construct()
     {
 
     }

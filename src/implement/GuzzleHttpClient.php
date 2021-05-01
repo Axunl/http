@@ -1,20 +1,19 @@
 <?php
 
+namespace axunl\httpClient\implement;
 
-namespace HttpClient\implement;
-
+use axunl\httpClient\HttpClient;
+use axunl\httpClient\Response;
 use GuzzleHttp\Client;
 use GuzzleHttp\Exception\RequestException;
 use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\RequestOptions;
-use HttpClient\HttpClient;
-use HttpClient\Response;
 use Psr\Http\Message\ResponseInterface;
 
 /**
- * GuzzleHttpClient需引入guzzlehttp/guzzle(composer require guzzlehttp/guzzle)
+ * GuzzleHttpClient
  * Class GuzzleHttpClient
- * @package HttpClient\implement
+ * @package axunl\httpClient\implement
  * @link https://guzzle-cn.readthedocs.io/zh_CN/latest/quickstart.html
  */
 class GuzzleHttpClient extends HttpClient

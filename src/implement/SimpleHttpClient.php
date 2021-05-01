@@ -1,14 +1,14 @@
 <?php
 
-namespace HttpClient\implement;
+namespace axunl\httpClient\implement;
 
-use HttpClient\HttpClient;
-use HttpClient\Response;
+use axunl\httpClient\HttpClient;
+use axunl\httpClient\Response;
 
 /**
  * 基于curl的httpClient实现
  * Class SimpleHttpClient
- * @package HttpClient\implement
+ * @package axunl\httpClient\implement
  */
 class SimpleHttpClient extends HttpClient
 {

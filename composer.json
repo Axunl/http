@@ -10,11 +10,13 @@
     ],
     "require": {
         "ext-curl": "*",
-        "ext-mbstring": "*"
+        "ext-mbstring": "*",
+        "axunl/container": "v1.0",
+        "guzzlehttp/guzzle": "^7.3"
     },
     "autoload": {
         "psr-4": {
-            "HttpClient\\": "src/"
+            "axunl\\httpClient\\": "src/"
         }
     }
 }

@@ -1,11 +1,11 @@
 <?php
 
 
-namespace HttpClient;
+namespace axunl\httpClient;
 
 /**
  * Class Response
- * @package HttpClient
+ * @package axunl\httpClient
  */
 class Response
 {
